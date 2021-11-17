@@ -6,6 +6,12 @@ class CharacterListSerializer(serializers.ModelSerializer):
         model = Character
         fields = '__all__'
 
+class CharacterDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Character
+        fields = '__all__'
+    
+
 
 class FilmListSerializer(serializers.ModelSerializer):
     class Meta:
