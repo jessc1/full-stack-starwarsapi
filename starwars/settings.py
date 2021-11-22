@@ -40,9 +40,14 @@ INSTALLED_APPS = [
     'galaxy',
     #3rd party
     'rest_framework',
+    'graphene_django',
     #s'drf_yasg',
     
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'galaxy.schema.schema'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -13,15 +13,9 @@ class Planet(models.Model):
     terrain = models.CharField(max_length=50)
     surface_water = models.CharField(max_length=50)
     population = models.CharField(max_length=50)
-    #residents = models.ManyToManyField(
-     #   Character,
-      #  related_name="pessoa",
-       # blank=True
-    #)
-    #residents = models.ForeignKey \
-     #           (Character, related_name="character", on_delete=models.CASCADE)
-    #residents= models.ForeignKey(Character, related_name="characters", on_delete=models.CASCADE)
-    #films = models.ForeignKey(Film, related_name="films")
+    residents = models.CharField(max_length=50)
+    films = models.CharField(max_length=100)
+    
     created=models.DateTimeField \
                    (auto_now_add=True, \
                     help_text= \
@@ -38,6 +32,7 @@ class Planet(models.Model):
 
     
 class Character(models.Model):
+    
     name=models.CharField(max_length=100)
     height = models.CharField(max_length=10, blank=True)
     mass = models.CharField(max_length=10, blank=True)
@@ -46,43 +41,12 @@ class Character(models.Model):
     eye_color = models.CharField(max_length=20, blank=True)
     birth_year = models.CharField(max_length=20, blank=True)
     gender = models.CharField(max_length=20, blank=True)
-    homeworld =  models.CharField(max_length=30, blank=True)
-    #films = models.ManyToManyField(
-     #   Film,
-      #  related_name ="film",
-       # blank=True
-    #)
+    homeworld =  models.CharField(max_length=30, blank=True)   
     film =  models.CharField(max_length=30, blank=True)
     species =  models.CharField(max_length=30, blank=True)
     vehicles = models.CharField(max_length=30, blank=True)
-    starships = models.CharField(max_length=30, blank=True)
+    starships = models.CharField(max_length=30, blank=True)  
     
-    #species = models.ManyToManyField(
-     #   Species,
-      #  related_name ="species",
-       # blank=True
-    #)
-    #vehicles = models.ManyToManyField(
-     #   Vehicles,
-      #  related_name ="vehicles",
-       # blank=True
-    #)
-    #species = films = models.ManyToManyField \
-     #              ('Species')
-    #vehicle = models.ManyToManyField \
-     #              ('Vehicles')
-    #starships = models.ManyToManyField(
-     #   Starships,
-      #  related_name ="starships",
-       # blank=True
-        #)
-    #starship = models.ManyToManyField \
-     #              ('Starships')
-    #homeworld = models.ForeignKey(Planet, related_name ="residents",on_delete=models.CASCADE)
-    #films = models.ForeignKey(Film, related_name="films")
-    #species = models.ForeignKey(Film, related_name="species")
-    #vehicles = models.ForeignKey(Film, related_name="vehicles")
-    #starships = models.ForeignKey(Film, related_name="starships")
     created=models.DateTimeField \
                    (auto_now_add=True, \
                     help_text= \
@@ -95,11 +59,6 @@ class Character(models.Model):
               (help_text = "The url's movie .")
     def __str__(self):
         return self.name
-    
-    
-
-
-
 
 class Transport(models.Model):
     
@@ -113,22 +72,21 @@ class Transport(models.Model):
     passengers = models.CharField(max_length=50)
     cargo_capacity = models.CharField(max_length=50)
     consumables = models.CharField(max_length=50)
+    pilots = models.CharField(max_length=50)
+    films =  models.CharField(max_length=50)
+    
 
     def __str__(self):
         return self.name
 
     
 class Starships(Transport):
-    hyperdrive_hating = models.CharField(max_length=50)
+    hyperdrive_rating = models.CharField(max_length=50)
     MGLT = models.CharField(max_length=50)
     starship_class = models.CharField(max_length=50)
-    #pilots = models.ManyToManyField(
-     #   Character,
-      #  related_name ="starships",
-       # blank=True
-        #)
+    
 
-class Vehicles(models.Model):
+class Vehicles(Transport):
     vehicle_class = models.CharField(max_length=50)
     
     
@@ -141,10 +99,9 @@ class Species(models.Model):
     skin_color = models.CharField(max_length=50)
     hair_color = models.CharField(max_length=50)
     eye_color = models.CharField(max_length=50)
-    average_lifespan = models.CharField(max_length=50)
-    #homeworld = models.ForeignKey(Planet, blank=True, null=True, on_delete=models.CASCADE)
-    #language = models.CharField(max_length=50)
-    #people = models.ManyToManyField(Character, related_name="species")
+    average_lifespan = models.CharField(max_length=50)    
+    language = models.CharField(max_length=50)
+    people = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
@@ -159,20 +116,11 @@ class Film(models.Model):
                    (null=True, \
                     help_text= \
                     "The date and time the movie was released.")
-    #characters = models.ManyToManyField(
-     #   Character,
-      #  related_name="characters",
-       # blank=True
-    #)
-    #planets = models.ManyToManyField(
-     #   Planet,
-      #  related_name="planets",
-       # blank=True
-        #)
-    #starships = models.ManyToManyField(
-        #Starships,
-        #related_name="starships",
-        
+    characters = models.CharField(max_length=50)
+    planets = models.CharField(max_length=50)
+    starships = models.CharField(max_length=50)
+    vehicles = models.CharField(max_length=50)
+    species = models.CharField(max_length=50)        
     created=models.DateTimeField \
                    (auto_now_add=True, \
                     help_text= \
