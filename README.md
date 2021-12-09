@@ -6,7 +6,9 @@
 https://staarwarsapi.herokuapp.com/
 
 ## Funcionalidades da api:
+* Ver a lista de personagens, filmes, espécies, e veículos
 * Ver os detalhes sobre personagens, filmes, espécies, e veículos
+* Pesquisar por personagens, filmes, espécies, e veículos
 
 
 ## Instalação 
