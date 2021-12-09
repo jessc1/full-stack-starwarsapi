@@ -12,9 +12,7 @@ https://staarwarsapi.herokuapp.com/
 
 
 ## Instalação 
-```
-pipenv shell
-```
+
 ```
 pipenv -r requirements.txt
 ```
