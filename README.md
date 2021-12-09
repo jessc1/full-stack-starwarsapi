@@ -1,5 +1,3 @@
-# starwarsapi
-
 # Star Wars API
 > API que retorna uma lista de personagens, filmes, espécies, naves e veículos
 
