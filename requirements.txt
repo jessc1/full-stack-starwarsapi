@@ -1,0 +1,7 @@
+Django
+django-heroku
+djangorestframework
+drf-yasg
+gunicorn
+pytz
+
