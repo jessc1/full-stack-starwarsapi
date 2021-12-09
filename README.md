@@ -25,10 +25,13 @@ python manage.py seed
 ```
 python manage.py runserver
 ```
+## Para rodar os testes
+```
+python manage.py test
+```
 ## Frameworks :
 * Django  
 * Django Rest Framework
-* Pandas
 * Graphql
   
 ## Banco de Dados:
