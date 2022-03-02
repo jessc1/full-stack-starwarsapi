@@ -9,7 +9,7 @@ const  Home = () => {
 
   useEffect(() => {
     const searchCharacter = async () => {
-      const res = await axios.get(`http://127.0.0.1:8000/starwars/character/list${query}`);
+      const res = await axios.get(`http://127.0.0.1:8000/starwars/character/list/${query}`);
       setCharacters(res.characters);
     };
     if (query.length === 0 || query.length > 2) searchCharacter();
